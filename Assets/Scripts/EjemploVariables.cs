@@ -25,6 +25,47 @@ public class EjemploVariables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+    private void FixedUpdate()
+    {
+
+    }
+    private void OnEnable()
+    {
+
+    }
+    private void OnDisable()
+    {
+
+    }
+    private void LateUpdate()
+    {
+
+    }
+    private void OnMouseDown()
+    {
         
     }
+    private void OnMouseDrag()
+    {
+        
+    }
+    private void OnMouseUp()
+    {
+        
+    }
+    private void OnMouseOver()
+    {
+        
+    }
+    private void OnMouseEnter()
+    {
+        
+    }
+    private void OnMouseExit()
+    {
+
+    }
+   
 }
