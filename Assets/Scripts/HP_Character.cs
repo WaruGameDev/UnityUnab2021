@@ -6,7 +6,7 @@ public class HP_Character : MonoBehaviour
 {
     public string nameCharacter = "";
     public int hp = 5;
-    bool rotando;
+   
     
     public void TakeDamage(int damage)
     {
@@ -21,21 +21,5 @@ public class HP_Character : MonoBehaviour
     {
         TakeDamage(1);
     }
-
-    private void Update()
-    {
-        if(rotando)
-        {
-            transform.Rotate(transform.forward * 5);
-        }
-    }
-
-    private void OnMouseEnter()
-    {
-        rotando = true;
-    }
-    private void OnMouseExit()
-    {
-        rotando = false;
-    }
+    
 }
