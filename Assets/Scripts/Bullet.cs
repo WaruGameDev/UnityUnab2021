@@ -8,10 +8,11 @@ public class Bullet : MonoBehaviour
     public float speed = 9;
     public Vector2 direction;
     public string target;
+    public float timeToDestroy = 3;
 
     private void Start()
     {
-        Destroy(gameObject, 3);
+        Destroy(gameObject, timeToDestroy);
     }
 
     private void Update()
@@ -33,7 +34,11 @@ public class Bullet : MonoBehaviour
                 return;
             hp.TakeDamage(damage);
             Destroy(gameObject);
+        }  
+        if(other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
         }
-        
     }
+    
 }

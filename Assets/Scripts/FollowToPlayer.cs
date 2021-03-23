@@ -6,7 +6,8 @@ public class FollowToPlayer : MonoBehaviour
 {
     public bool everFollowing;
     public Vector2 direction;
-    public float speed = 4;
+    public float speed = 300;
+    public Rigidbody2D rb;
 
     private GameObject player;
     // Start is called before the first frame update
@@ -16,7 +17,7 @@ public class FollowToPlayer : MonoBehaviour
     }
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
         DirectionToPlayer();
     }
 
@@ -27,7 +28,8 @@ public class FollowToPlayer : MonoBehaviour
         {
             DirectionToPlayer();
         }
-        transform.Translate(direction * speed * Time.deltaTime);
+        //transform.Translate(direction * speed * Time.deltaTime);
+        rb.velocity = new Vector2(direction.x, direction.y) * speed * Time.fixedDeltaTime;
     }
     void DirectionToPlayer()
     {

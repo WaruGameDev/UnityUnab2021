@@ -8,14 +8,23 @@ public class MovementChar : MonoBehaviour
     public float speed = 5;
     public Vector2 directionPlayer = new Vector2(1,0);
     public bool mouse;
+    public Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.right * x * speed * Time.deltaTime);
-        transform.Translate(Vector3.up * y * speed * Time.deltaTime);
+        //transform.Translate(Vector3.right * x * speed * Time.fixedDeltaTime);
+        //transform.Translate(Vector3.up * y * speed * Time.fixedDeltaTime);
+       
+        rb.velocity = new Vector2(x, y) *speed * Time.fixedDeltaTime;
+
 
         //gamepad mode
         //float dirPlayerX = Mathf.Round(Input.GetAxisRaw("Horizontal"));

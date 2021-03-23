@@ -14,7 +14,7 @@ public class Shoot : MonoBehaviour
     {
         if(!isPlayer)
         {
-            StartCoroutine(ShootEnemy());
+            StartCoroutine(ShootFourDirection());
         }
     }
 
@@ -46,5 +46,14 @@ public class Shoot : MonoBehaviour
             ShootBullet(GetComponent<FollowToPlayer>().direction);
         }
         //yield break;
+    }
+    IEnumerator ShootFourDirection()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3);
+            ShootBullet(GetComponent<FollowToPlayer>().direction);
+            
+        }
     }
 }
