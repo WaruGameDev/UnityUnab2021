@@ -33,6 +33,10 @@ public class FollowToPlayer : MonoBehaviour
     }
     void DirectionToPlayer()
     {
-        direction = (player.transform.position - transform.position).normalized;
+        if(player != null)
+        {
+            direction = (player.transform.position - transform.position).normalized;
+        }
+        
     }
 }

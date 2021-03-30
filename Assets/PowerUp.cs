@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PowerUp : MonoBehaviour
 {
@@ -32,5 +33,9 @@ public class PowerUp : MonoBehaviour
             
             
         }
+    }
+    private void Start()
+    {
+        transform.DOLocalMoveY(0.1f, 0.5f).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutBack);
     }
 }

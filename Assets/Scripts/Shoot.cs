@@ -31,7 +31,7 @@ public class Shoot : MonoBehaviour
     }
     public void ShootBullet(Vector2 dir)
     {
-
+        FeedbackManager.sFeedbackManager.ScreenShake(0.5f, 0.1f);
         GameObject bulletGO = Instantiate(bullet, transform.position, Quaternion.identity);
         bulletGO.GetComponent<Bullet>().target = target;
         bulletGO.GetComponent<Bullet>().MoveBullet(dir);
