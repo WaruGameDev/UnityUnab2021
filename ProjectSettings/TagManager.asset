@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - PoweUp
   - Wall
+  - Item
   layers:
   - Default
   - TransparentFX
