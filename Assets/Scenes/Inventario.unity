@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameItem: Piedra
+  tipoMaterial: 0
 --- !u!1 &264253423
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameItem: Piedra
+  tipoMaterial: 1
 --- !u!58 &264253425
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -561,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb95366baed1e374b8fa6c4566213be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemNameRequest: Piedra
+  itemRequest: 1
   ready: 0
   characterDialogue:
   - Necesito una piedra
@@ -680,6 +682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameItem: Piedra
+  tipoMaterial: 2
 --- !u!58 &1035992886
 CircleCollider2D:
   m_ObjectHideFlags: 0

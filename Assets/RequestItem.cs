@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RequestItem : MonoBehaviour
 {
-    public string itemNameRequest;
+    //public string itemNameRequest;
+    public Item.TIPO_MATERIAL itemRequest;
     public bool ready;
     public List<string> characterDialogue;
 
@@ -27,7 +28,7 @@ public class RequestItem : MonoBehaviour
                 Inventario inventario = other.GetComponent<Inventario>();
                 foreach (GameObject g in inventario.inventario)
                 {
-                    if (g.GetComponent<Item>().nameItem == itemNameRequest)
+                    if (g.GetComponent<Item>().tipoMaterial == itemRequest)
                     {
                         ready = true;
                         inventario.inventario.Remove(g);
