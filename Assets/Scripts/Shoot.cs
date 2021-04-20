@@ -32,10 +32,16 @@ public class Shoot : MonoBehaviour
     public void ShootBullet(Vector2 dir)
     {
         //FeedbackManager.sFeedbackManager.ScreenShake(0.5f, 0.1f);
-        GameObject bulletGO = Instantiate(bullet, transform.position, Quaternion.identity);
-        bulletGO.GetComponent<Bullet>().target = target;
-        bulletGO.GetComponent<Bullet>().MoveBullet(dir);
-        bulletGO.GetComponent<SpriteRenderer>().color = colorBullet;
+        //GameObject bulletGO = Instantiate(bullet, transform.position, Quaternion.identity);
+        //bulletGO.GetComponent<Bullet>().target = target;
+        //bulletGO.GetComponent<Bullet>().MoveBullet(dir);
+        //bulletGO.GetComponent<SpriteRenderer>().color = colorBullet;
+        RaycastHit2D raycast = Physics2D.Raycast(transform.position, dir);
+        if(raycast.transform.CompareTag("Enemy"))
+        {
+            raycast.transform.GetComponent<HP_Character>().TakeDamage(1);
+        }
+
     }
 
     IEnumerator ShootEnemy()
